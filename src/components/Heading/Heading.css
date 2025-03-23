@@ -1,0 +1,19 @@
+.heading-container {
+  text-align: center;
+  /* margin-top: 2.6rem; */
+}
+
+.main-title {
+  color: #00ff00;
+  font-size: 4rem;
+  font-family: "Share Tech Mono", monospace;
+  filter: drop-shadow(0 0 8px #00ff00);
+}
+
+.subtitle {
+  color: #00ff00;
+  font-size: 2rem;
+  font-family: "Share Tech Mono", monospace;
+  filter: drop-shadow(0 0 6px #00ff00);
+  /* margin-top: 0.5rem; */
+}

@@ -1,0 +1,75 @@
+.details-layout {
+  display: flex;
+  justify-content: center;
+  margin: 2rem auto 4rem auto;
+  background-color: rgba(0, 255, 0, 0.05);
+  border: 1px solid #00ff00;
+  border-radius: 8px;
+  padding: 1.5rem;
+  max-width: 800px;
+  box-shadow: 0 0 15px #00ff00;
+}
+
+.details-info {
+  color: #00ff00;
+  font-family: "Share Tech Mono", monospace;
+  font-size: 1.15rem;
+  padding-left: 1.5rem;
+  width: 100%;
+}
+
+.details-info h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.details-info h3 {
+  font-size: 1.5rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+  color: #00ff00;
+}
+
+.details-list {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 1.5rem;
+}
+
+.details-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 0.8rem;
+  flex-wrap: wrap;
+}
+
+.label {
+  width: 240px;
+  font-weight: bold;
+  color: #00ff00;
+  flex-shrink: 0;
+  text-align: left;
+}
+
+.details-info a {
+  color: #00ff00;
+
+  word-break: break-word;
+}
+
+.register-section {
+  margin-top: 1.5rem;
+}
+
+.qr-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+
+.details-list a {
+  color: #00ff00;
+  word-break: break-word;
+  gap: 1rem;
+}

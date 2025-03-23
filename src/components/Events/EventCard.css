@@ -1,0 +1,43 @@
+.event-layout {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin: 2rem auto;
+  background-color: rgba(0, 255, 0, 0.05);
+  border: 1px solid #00ff00;
+  border-radius: 8px;
+  padding: 1.5rem;
+  max-width: 1000px;
+  align-items: flex-start;
+}
+
+.event-img {
+  width: 300px;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 0 10px #00ff00;
+}
+
+.event-info {
+  flex: 1;
+  color: #00ff00;
+  font-family: "Share Tech Mono", monospace;
+  padding-left: 1.5rem;
+}
+
+.event-info h2 {
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+  padding-left: 1rem;
+}
+
+.event-info ul {
+  list-style: disc;
+  padding-left: 2.5rem;
+  font-size: 1.15rem;
+}
+
+.event-info li {
+  margin-bottom: 0.5rem;
+  line-height: 1.6;
+}

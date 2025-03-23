@@ -1,0 +1,182 @@
+@import url("https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap");
+
+/* Wrap everything */
+.grid-wrapper {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background-color: black;
+}
+
+html,
+body {
+  height: 100%;
+  overflow: hidden; /* ✅ Prevents root-level scrolling */
+  margin: 0;
+  padding: 0;
+}
+
+/* Background grid layer */
+.grid-container {
+  --grid: 5rem;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform-style: preserve-3d;
+  perspective: 100rem;
+  z-index: 0;
+  position: fixed;
+  pointer-events: none;
+}
+
+/* Reusable plane styles */
+.plane {
+  width: 300%;
+  height: 150%;
+  min-height: 70rem;
+  position: absolute;
+  left: 50%;
+  transform-style: preserve-3d;
+  transform: translateX(-50%);
+}
+
+/* Bottom plane (moving away) */
+.plane.back {
+  bottom: 0;
+  --dir: 1;
+  transform-origin: bottom center;
+  transform: translateX(-50%) rotateX(85deg);
+  z-index: 0;
+}
+
+/* Top plane (moving inward) */
+.plane.front {
+  top: 0;
+  --dir: -1;
+  transform-origin: top center;
+  transform: translateX(-50%) rotateX(-85deg);
+  z-index: 0;
+}
+
+.plane.front > .grid::after {
+  background-image: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 255) var(--grid),
+    rgba(0, 0, 0, 0)
+  );
+}
+
+/* Grid animation and styling */
+.plane > .grid {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+}
+
+.plane > .grid::before,
+.plane > .grid::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.plane > .grid::before {
+  background-image: repeating-linear-gradient(
+      to left,
+      #00ff00,
+      #00ff00 4px,
+      transparent 2px,
+      transparent var(--grid)
+    ),
+    repeating-linear-gradient(
+      to bottom,
+      #00ff00,
+      #00ff00 4px,
+      transparent 2px,
+      transparent var(--grid)
+    );
+  animation: move 0.8s linear infinite forwards;
+  opacity: 0.25;
+}
+
+.plane > .grid::after {
+  background-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 255) var(--grid),
+    rgba(0, 0, 0, 0)
+  );
+  transform: translateZ(1px);
+  z-index: 1;
+}
+
+.glow {
+  filter: blur(1rem);
+  z-index: 1;
+  mix-blend-mode: plus-lighter;
+}
+
+/* Foreground content container */
+.content-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 5;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  /* justify-content: center; */
+  flex-direction: column;
+  overflow-y: auto; /* ✅ Only one scroll area */
+}
+
+/* Optional blinking text effect */
+.content-overlay h1 {
+  color: #00ff00;
+  font-size: 5rem;
+  font-family: "Share Tech Mono", monospace;
+  text-align: center;
+  filter: drop-shadow(0 0 5px #00ff00);
+  white-space: nowrap;
+  position: relative;
+}
+
+.content-overlay h1::after {
+  content: "";
+  display: inline-block;
+  width: 0.2em;
+  height: 0.7em;
+  background-color: currentColor;
+  margin-left: 0.1em;
+  animation: blink 1s linear infinite forwards;
+  vertical-align: bottom;
+}
+
+/* Animation for grid movement */
+@keyframes move {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(calc(var(--grid) * var(--dir)));
+  }
+}
+
+/* Cursor blinking effect */
+@keyframes blink {
+  0%,
+  50% {
+    visibility: visible;
+  }
+  51%,
+  100% {
+    visibility: hidden;
+  }
+}

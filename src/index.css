@@ -1,0 +1,43 @@
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  overflow-x: hidden;
+}
+
+/* Total scrollbar width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track (background of the scrollbar) */
+::-webkit-scrollbar-track {
+  background: #000; /* dark background */
+  border-radius: 10px;
+}
+
+/* Scrollbar thumb (the draggable part) */
+::-webkit-scrollbar-thumb {
+  background: #00ff00; /* bright neon green */
+  border-radius: 10px;
+  box-shadow: 0 0 5px #00ff00;
+}
+
+/* On hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #00cc00;
+}
