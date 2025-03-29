@@ -39,6 +39,9 @@ The app will be available at http://localhost:5173/
 
 
 
+## 🔗 Live Demo
+Check out the live version of Tekfure here: [Tekfure Live](https://tek-fure.vercel.app)
+
 
 
 https://github.com/user-attachments/assets/3897089d-1d39-47ba-9936-6a0a003a7047
